@@ -1,0 +1,37 @@
+<div ng-controller="propostaModalController as pc" class="modal-demo">
+  <button type="button" class="btn btn-default" ng-click="pc.open('lg')">Nova Proposta</button>
+</div>
+<br />
+<div ng-controller="propostaController">
+
+  <label>Filtro: <input class="form-control" ng-model="search" maxlength="30"></label>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Estado Civil</th>
+        <th>Estado</th>
+        <th>Dependentes</th>
+        <th>Renda</th>
+        <th>Limite</th>
+        <th>Resultado Analise</th>
+      </tr>
+    </thead>
+    <tr ng-repeat="proposta in propostas | filter:search">
+      <td>{{proposta.pessoa.cpf}}</td>
+      <td>{{ proposta.pessoa.nome }}</td>
+      <td>{{proposta.pessoa.idade}}</td>
+      <td>{{proposta.pessoa.sexo}}</td>
+      <td>{{proposta.pessoa.estadoCivilEnum}}</td>
+      <td>{{proposta.pessoa.estado}}</td>
+      <td>{{proposta.pessoa.dependentes}}</td>
+      <td>R$ {{proposta.pessoa.renda}}</td>
+      <td>{{ converterLimiteEnum(proposta.limite) }}</td>
+      <td>{{ proposta.resultadoAnalise }}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,80 @@
+<div class="modal-header">
+	<h3 class="modal-title" id="modal-title">Nova Proposta</h3>
+</div>
+<div class="modal-body" id="modal-body" ng-controller="propostaController">
+	<div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">
+		{{alert.msg}}</div>
+
+	<form name="formProposta" class="needs-validation" novalidate>
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpCpf.$invalid }">
+			<label for="inpCpf">CPF*</label>
+			<input type="text" class="form-control" id="inpCpf" placeholder="CPF do cliente" maxlength="14" required
+				ng-model="pessoa.cpf" name="inpCpf">
+			<span ng-show="formProposta.inpCpf.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpNome.$invalid }">
+			<label for="inpNome">Nome*</label>
+			<input type="text" class="form-control" id="inpNome" placeholder="Nome do cliente" maxlength="30" required
+				ng-model="pessoa.nome" name="inpNome">
+			<span ng-show="formProposta.inpNome.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpIdade.$invalid }">
+			<label for="inpIdade">Idade*</label>
+			<input type="number" class="form-control" id="inpIdade" maxlength="3" name="inpIdade" required
+				ng-model="pessoa.idade">
+			<span ng-show="formProposta.inpIdade.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpSexo.$invalid }">
+			<label for="inpSexo">Sexo*</label>
+			<select name="inpSexo" id="inpSexo" class="form-control" ng-model="pessoa.sexo" required>
+				<option value="M">Masculino</option>
+				<option value="F">Feminino</option>
+			</select>
+			<span ng-show="formProposta.inpSexo.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpEstadoCivil.$invalid }">
+			<label for="inpEstadoCivil">Estado Civil*</label>
+			<select name="inpEstadoCivil" id="inpEstadoCivil" class="form-control" ng-model="pessoa.estadoCivilEnum" required>
+				<option value="SOLTEIRO">Solteiro(a)</option>
+				<option value="CASADO">Casado(a)</option>
+				<option value="DIVORCIADO">Divorciado(a)</option>
+				<option value="VIUVA">Viuvo(a)</option>
+			</select>
+			<span ng-show="formProposta.inpEstadoCivil.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpEstado.$invalid }">
+			<label for="inpEstado">Estado*</label>
+			<select name="inpEstado" id="inpEstado" class="form-control" ng-model="pessoa.estado" required>
+				<option value="SC">Santa Catarina</option>
+				<option value="RJ">Rio de Janeiro</option>
+				<option value="SP">Sao Paulo</option>
+				<option value="MA">Maranhao</option>
+			</select>
+			<span ng-show="formProposta.inpEstado.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpDependentes.$invalid }">
+			<label for="inpDependentes">Dependentes*</label>
+			<input type="number" class="form-control" id="inpDependentes" maxlength="3" required ng-model="pessoa.dependentes"
+				name="inpDependentes">
+			<span ng-show="formProposta.inpDependentes.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': formProposta.inpRenda.$invalid }">
+			<label for="inpRenda">Renda*</label>
+			<input type="number" class="form-control" id="inpRenda" name="inpRenda" maxlength="10" required
+				ng-model="pessoa.renda">
+			<span ng-show="formProposta.inpRenda.$error.required" class="help-block">Campo Obrigatorio.</span>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-disabled="formProposta.$invalid"
+				ng-class="{ 'disabled': formProposta.$invalid }" ng-click="salvar()">Salvar</button>
+			<button class="btn btn-warning" type="button" ng-click="pc.cancel()">Cancelar</button>
+		</div>
+	</form>
+</div>

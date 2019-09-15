@@ -1,0 +1,25 @@
+@relation analiseCredito
+@attribute idade numeric
+@attribute sexo {M, F}
+@attribute estadoCivil {solteiro, casado, divorciado, viuva}
+@attribute estado {SC, SP, RJ, MA}
+@attribute dependentes numeric
+@attribute renda numeric
+@attribute resultadoAnalise {Aprovado, Negado}
+@attribute limite {reprovadoPolitica, rendaBaixa, 100-500, 500-1000, 1000-1500, 1500-2000, <2000}
+
+@data
+28,M,solteiro,SC,0,2500,Aprovado,500-1000
+17,F,solteiro,SP,0,1000,Aprovado,100-500
+68,M,casado,SC,3,8000,Aprovado,1500-2000
+61,F,casado,RJ,3,5000,Aprovado,1000-1500
+56,M,divorciado,RJ,2,2000,Negado,reprovadoPolitica
+45,F,divorciado,SP,1,2000,Negado,reprovadoPolitica
+30,M,casado,MA,2,8000,Aprovado,<2000
+33,F,casado,SP,1,10000,Aprovado,<2000
+19,M,solteiro,SC,1,400,Negado,rendaBaixa
+63,F,viuva,MA,3,1500,Negado,reprovadoPolitica
+28,F,solteiro,SC,2,2500,Aprovado,100-500
+16,M,solteiro,SP,0,500,Negado,rendaBaixa
+30,M,casado,MA,5,8000,Aprovado,1000-1500
+33,F,viuva,SP,0,10000,Aprovado,<2000
