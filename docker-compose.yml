@@ -5,8 +5,6 @@ services:
     container_name: "mongodb"
     ports:
     - 27017:27017
-    networks:
-    - app-net
     command: --smallfiles
   app:
     image: joaojoseleal/analise-credito-backend
