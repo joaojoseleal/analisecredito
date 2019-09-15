@@ -7,5 +7,5 @@ spring:
   data:
     mongodb:
       database: analise-credito
-      host: 0.0.0.0
+      host: mongodb
       port: 27017
