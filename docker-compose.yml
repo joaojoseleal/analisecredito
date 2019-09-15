@@ -24,5 +24,3 @@ services:
     - 5000:80
     networks:
     - app-net
-    build:
-      context: ./analisecreditofrontend
