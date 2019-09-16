@@ -17,7 +17,7 @@ Para desenvolver o sistema AnaliseCredito foram utilizados as seguintes ferramen
 
 # Composição da Stack
 
-A Stack do Newcredit é composta por 3 aplicações, são elas:
+A Stack do AnaliseCredito é composta por 3 aplicações, são elas:
 
 - AnaliseCreditoBackend: Serviço responsável pela comunicação com o frontend e tomada de decisão da análise de crédito
 
