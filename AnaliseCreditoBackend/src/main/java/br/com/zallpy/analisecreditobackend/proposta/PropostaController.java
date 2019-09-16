@@ -20,7 +20,7 @@ import br.com.zallpy.analisecreditobackend.pessoa.Pessoa;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = "http://localhost:5000", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/proposta")
 @Api(value = "Propostas")
