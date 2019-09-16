@@ -15,6 +15,12 @@ Para desenvolver o sistema AnaliseCredito foram utilizados as seguintes ferramen
 
 - Weka para treinar o classificador responsável pela tomada de decisão
 
+# Algoritmo de tomada de decisão
+
+Foi utilizado o Weka para treinar o algoritmo de tomada de decisão. 
+
+- Realizei os testes com o algoritmo Naive Bayes, Random Forest e IBk, sendo que o algoritmo que obteve melhor confiança na aprendizagem foi o IBk que é o que esta sendo utilizado nesse projeto.
+
 # Composição da Stack
 
 A Stack do AnaliseCredito é composta por 3 aplicações, são elas:
@@ -24,14 +30,6 @@ A Stack do AnaliseCredito é composta por 3 aplicações, são elas:
 - Mongodb: Banco de dados
 
 - AnaliseCreditoFrontend: frontend
-
-# Algoritmo de tomada de decisão
-
-Foi utilizado o Weka para treinar o algoritmo de tomada de decisão. 
-
-- Realizei os testes com o algoritmo Naive Bayes, Random Forest e IBk, sendo que o algoritmo que obteve melhor confiança na aprendizagem foi o IBk que é o que esta sendo utilizado nesse projeto.
-
-
 
 ## O que preciso para subir a aplicação
 
