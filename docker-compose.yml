@@ -24,6 +24,8 @@ services:
     - 80:80
     networks:
     - app-net
+    links:
+    - app
 
 networks:
   app-net:
