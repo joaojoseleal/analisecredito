@@ -25,6 +25,13 @@ A Stack do AnaliseCredito é composta por 3 aplicações, são elas:
 
 - AnaliseCreditoFrontend: frontend
 
+# Algoritmo de tomada de decisão
+
+Foi utilizado o Weka para treinar o algoritmo de tomada de decisão. 
+
+- Realizei os testes com o algoritmo Naive Bayes, Random Forest e IBk, sendo que o algoritmo que obteve melhor confiança na aprendizagem foi o IBk que é o que esta sendo utilizado nesse projeto.
+
+
 
 ## O que preciso para subir a aplicação
 
@@ -41,7 +48,7 @@ sudo ./start.sh
 
 Após rodar o comando e subir todos os serviços é só acessar o endereço :
 
-http://localhost:80
+http://localhost
 
 ## Documentação API
 Com a finalidade de documentar as APIs foi adicionado o swagger para tal finalidade. O mesmo pode ser acessado pelos endereços abaixo:
