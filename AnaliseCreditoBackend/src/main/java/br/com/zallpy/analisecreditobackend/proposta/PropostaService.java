@@ -1,10 +1,10 @@
 package br.com.zallpy.analisecreditobackend.proposta;
 
-import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import br.com.zallpy.analisecreditobackend.exceptions.AnaliseCreditoException;
@@ -62,7 +62,8 @@ public class PropostaService {
 
 	private Instances getDataSourceWeka(String name) {
 		try {
-			DataSource ds = new DataSource(new FileInputStream("src/main/resources/" + name));
+			ClassPathResource resource = new ClassPathResource(name);
+			DataSource ds = new DataSource(resource.getInputStream());
 			Instances instances = ds.getDataSet();
 			instances.setClassIndex(instances.numAttributes() - 2);
 			return instances;
@@ -74,8 +75,8 @@ public class PropostaService {
 
 	private Classifier getModel(String name) {
 		try {
-			ObjectInputStream oos = new ObjectInputStream(new FileInputStream(
-					"src/main/resources/models/" + name));
+			ClassPathResource resource = new ClassPathResource(name);
+			ObjectInputStream oos = new ObjectInputStream(resource.getInputStream());
 			Classifier cls = (Classifier) oos.readObject();
 			oos.close();
 			return cls;
