@@ -11,4 +11,4 @@ docker build -t joaojoseleal/analise-credito-frontend .
 echo "----> START DOCKER <----"
 cd ../
 docker-compose up
-echo "----> FINISH <----"
+echo "-----> FINISH <-----"
