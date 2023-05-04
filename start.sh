@@ -8,7 +8,7 @@ cd ../AnaliseCreditoFrontend
 echo "----> BUILD FRONTEND <----"
 docker build -t joaojoseleal/analise-credito-frontend .
 
-echo "----> START DOCKER <----"
+echo "-----> START DOCKER <-----"
 cd ../
 docker-compose up
 echo "-----> FINISH <-----"
